@@ -1,0 +1,4 @@
+*.py                  @SalesforceFoundation/release-engineering-reviewers
+/cumulusci.yml        @SalesforceFoundation/release-engineering-reviewers
+/tasks/               @SalesforceFoundation/release-engineering-reviewers
+/sfdx-project.json    @SalesforceFoundation/release-engineering-reviewers
