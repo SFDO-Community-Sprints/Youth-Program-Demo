@@ -1,0 +1,36 @@
+minimum_cumulusci_version: '3.26.0'
+project:
+    name: Youth-Program-Demo
+    package:
+        name: Youth-Program-Demo
+        namespace: Youth-Program-Demo
+        api_version: '50.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+sources:
+    pmm:
+        github: https://github.com/SalesforceFoundation/PMM
+
+flows:
+    dependencies:
+        steps:
+            3:
+                flow: pmm:install_prod
+
+tasks:
+    robot:
+        options:
+            suites: robot/Youth-Program-Demo/tests
+            options:
+                outputdir: robot/Youth-Program-Demo/results
+
+    robot_testdoc:
+        options:
+            path: robot/Youth-Program-Demo/tests
+            output: robot/Youth-Program-Demo/doc/Youth-Program-Demo_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
